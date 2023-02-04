@@ -17,12 +17,12 @@ services:
     image: ucoin
     container_name: unode
     depends_on:
-      - ucoin_build
+      - ucoin
     ports:
       - 3000:3000
     volumes:
       - ./blockchain/data:/usr/src/app/data
-      - ./blockchain/secret:/usr/src/app/secrets
+      - ./blockchain/secrets:/usr/src/app/secrets
 
   web_ui:
     build: ./blockchain-ui
