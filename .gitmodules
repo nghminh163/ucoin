@@ -1,0 +1,6 @@
+[submodule "blockchain-ui"]
+	path = blockchain-ui
+	url = https://github.com/nghminh163/blockchain-ui.git
+[submodule "blockchain"]
+	path = blockchain
+	url = https://github.com/mindt102/blockchain.git

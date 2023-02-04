@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  ucoin_build:
+    image: ucoin
+    build: ./blockchain
+    command: ['echo', 'build completed']
+
+  ucoin:
+    image: ucoin
+    depends_on:
+      - ucoin_build
+    deploy:
+      replicas: 4
+
+  node:
+    image: ucoin
+    container_name: unode
+    depends_on:
+      - ucoin_build
+    ports:
+      - 3000:3000
+    volumes:
+      - ./blockchain/data:/usr/src/app/data
+      - ./blockchain/secret:/usr/src/app/secrets
+
+  web_ui:
+    build: ./blockchain-ui
+    container_name: bc-ui
+    depends_on:
+      - node
+    ports:
+      - 3001:3000
