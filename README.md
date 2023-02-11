@@ -23,4 +23,4 @@ cd ..
 docker-compose up -d --build
 ```
 
-5. Access the UI to test the blockchain at `http://localhost:3001`
+5. Access the UI to test the blockchain at [http://localhost:3001](http://localhost:3001)
