@@ -1,3 +1,10 @@
+# Prerequisites
+
+- Docker
+- Docker Compose
+
+# How to run
+
 1. Clone this repo
 
 ```bash
