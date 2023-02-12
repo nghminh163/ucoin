@@ -9,6 +9,7 @@
 
 ```bash
 git clone --recurse-submodules https://github.com/nghminh163/ucoin
+cd ucoin
 ```
 
 2. Regenerate the genesis block
