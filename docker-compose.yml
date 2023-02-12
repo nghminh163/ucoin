@@ -4,10 +4,7 @@ services:
   ucoin_build:
     image: ucoin
     build: ./blockchain
-    volumes:
-      - ./blockchain/data:/usr/src/app/data
-    command: [ 'python3', 'create_genesis_block.py' ]
-
+    command: "echo build completed"
   ucoin:
     image: ucoin
     depends_on:
