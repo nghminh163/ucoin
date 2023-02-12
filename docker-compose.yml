@@ -4,7 +4,9 @@ services:
   ucoin_build:
     image: ucoin
     build: ./blockchain
-    command: ['echo', 'build completed']
+    volumes:
+      - ./blockchain/data:/usr/src/app/data
+    command: [ 'python3', 'create_genesis_block.py' ]
 
   ucoin:
     image: ucoin
@@ -13,7 +15,7 @@ services:
     deploy:
       replicas: 4
 
-  node:
+  unode:
     image: ucoin
     container_name: unode
     depends_on:
@@ -28,6 +30,6 @@ services:
     build: ./blockchain-ui
     container_name: bc-ui
     depends_on:
-      - node
+      - unode
     ports:
       - 3001:3000
