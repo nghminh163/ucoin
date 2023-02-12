@@ -3,7 +3,9 @@ version: "3.7"
 services:
   ucoin_build:
     image: ucoin
-    build: ./blockchain
+    build:
+      context: ./blockchain
+      dockerfile: ./SimDockerfile
     command: "echo build completed"
   ucoin:
     image: ucoin
